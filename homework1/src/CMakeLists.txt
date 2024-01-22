@@ -30,6 +30,11 @@ if(WIN32)
    link_directories("${CMAKE_CURRENT_SOURCE_DIR}/../../dependencies/glfw-3.3.9.bin.WIN64/lib-vc2022")
 endif()
 
+if(UNIX AND NOT APPLE)
+   find_package(glfw3 REQUIRED)
+   find_package(GLEW REQUIRED)
+endif()
+
 file(GLOB
      SOURCES
      *.cpp)
@@ -45,4 +50,8 @@ endif()
 if (WIN32)
    target_link_libraries(homework1_exe PRIVATE ${GLEW_LIBRARY} ${GLFW_LIBRARY})
    target_link_libraries(homework1_exe PRIVATE glew32 glfw3 opengl32)
+endif()
+
+if (UNIX AND NOT APPLE)
+   target_link_libraries(homework1_exe PRIVATE glfw GLEW::GLEW)
 endif()

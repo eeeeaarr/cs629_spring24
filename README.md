@@ -40,4 +40,9 @@ Important note: Macs do not natively support OpenGL versions after 4.1. This sho
 
 ## Linux Setup
 
-TBD but it's going to be very similar to the Mac setup.
+1. Install glew with `sudo apt-get install libglew-dev`
+1. Install glfw with two commands: `sudo apt-get install libglfw3` and `sudo apt-get install libglfw3-dev`
+1. Install cmake with `sudo apt-get install cmake`
+1. Install g++ with `sudo apt-get install g++`
+1. build with `make`
+1. run with `./homework1_exe`
