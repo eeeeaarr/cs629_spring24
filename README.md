@@ -17,11 +17,11 @@ Platform-specific system setup information below.
 
 1. Install Visual Studio 2022 (not just VS Code).
 1. Download 64 bit GLFW precompiled binaries from https://www.glfw.org/download.html. This will be a zipfile.
-    1. Extract the zipfile. You should have a folder named "glew-2.1.0"
-    1. Put that folder in the "dependencies" folder of this project
+   1. Extract the zipfile. You should have a folder named "glew-2.1.0"
+   1. Put that folder in the "dependencies" folder of this project
 1. Download GLEW binaries from here: https://glew.sourceforge.net/
-    1. Extract the zipfile. You should have a folder named "glfw-3.3.9.bin.WIN64"
-    1. Put that folder in the "dependencies" folder of this project
+   1. Extract the zipfile. You should have a folder named "glfw-3.3.9.bin.WIN64"
+   1. Put that folder in the "dependencies" folder of this project
 1. There is a DLL in glew-2.1.0\bin\Release\x64 that needs to be in the search path when you run your program. The command for adding a directory to your search path in powershell is `$env:PATH += ";the/directory/goes/here`. If the program runs but doesn't do anything and just exits, check your spelling of the directory and the path again. Once you've got it working, I think there's a control panel you can use to permanently add that directory to the path.
 1. After you run `cmake ./src` there will be a Visual Studio `.sln` file in your directory. Open it in Visual Studio and build (but don't try to run anything yet).
 1. To run the project, come back out to the command line and run it from there (e.g. `.\Debug\homework1_exe.exe`)
@@ -44,5 +44,6 @@ Important note: Macs do not natively support OpenGL versions after 4.1. This sho
 1. Install glfw with two commands: `sudo apt-get install libglfw3` and `sudo apt-get install libglfw3-dev`
 1. Install cmake with `sudo apt-get install cmake`
 1. Install g++ with `sudo apt-get install g++`
+1. Type `cmake ./src` in the homework folder.
 1. build with `make`
 1. run with `./homework1_exe`
