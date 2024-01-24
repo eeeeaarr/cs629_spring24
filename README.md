@@ -17,10 +17,10 @@ Platform-specific system setup information below.
 
 1. Install Visual Studio 2022 (not just VS Code).
 1. Download 64 bit GLFW precompiled binaries from https://www.glfw.org/download.html. This will be a zipfile.
-   1. Extract the zipfile. You should have a folder named "glew-2.1.0"
+   1. Extract the zipfile. You should have a folder named "glfw-3.3.9.bin.WIN64"
    1. Put that folder in the "dependencies" folder of this project
 1. Download GLEW binaries from here: https://glew.sourceforge.net/
-   1. Extract the zipfile. You should have a folder named "glfw-3.3.9.bin.WIN64"
+   1. Extract the zipfile. You should have a folder named "glew-2.1.0"
    1. Put that folder in the "dependencies" folder of this project
 1. There is a DLL in glew-2.1.0\bin\Release\x64 that needs to be in the search path when you run your program. The command for adding a directory to your search path in powershell is `$env:PATH += ";the/directory/goes/here`. If the program runs but doesn't do anything and just exits, check your spelling of the directory and the path again. Once you've got it working, I think there's a control panel you can use to permanently add that directory to the path.
 1. After you run `cmake ./src` there will be a Visual Studio `.sln` file in your directory. Open it in Visual Studio and build (but don't try to run anything yet).
@@ -30,7 +30,7 @@ Platform-specific system setup information below.
 
 Important note: Macs do not natively support OpenGL versions after 4.1. This should be fine for this class, and in class we will not be discussing any OpenGL functions later than 4.1. However if you are scouring the [OpenGL reference](https://registry.khronos.org/OpenGL-Refpages/gl4/) looking for something that we didn't discuss in class, check the version compatibility matrix at the bottom of the reference page to make sure that this works in 4.1 or earlier.
 
-1. Install XCode command line tools from https://developer.apple.com/xcode/resources/. Note: these should be installed in this directory: `/Library/Developer/CommandLineTools` -- if for some reason they are not, let me know and I'll update the CMakeLists.txt file to try a few locations.
+1. Install XCode command line tools from https://developer.apple.com/xcode/resources/. Note: these should be installed in this directory: `/Library/Developer/CommandLineTools` -- if for some reason they are not, let me know and I'll update the CMakeLists.txt file to try a few locations. If you have an older version of MacOS you may need to download an older version of XCode.
 1. Install Homebrew from https://brew.sh/
 1. Type `brew install glfw` in the terminal.
 1. Type `brew install glew` in the terminal.
