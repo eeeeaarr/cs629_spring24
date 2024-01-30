@@ -2,9 +2,9 @@
 
 Note: specific instructions for each homework assignment have been moved into the respective folders.
 
-[Homework 1](homework1/README.md)
+[Homework 1](homework1/)
 
-[Homework 2](homework2/README.md)
+[Homework 2](homework2/)
 
 ## General information:
 
