@@ -1,6 +1,6 @@
 # Homework 1: Get OpenGL working
 
-The objective of this homework is to get OpenGL working on your machine. This directory contains a "hello world" project that just opens up an OpenGL window. The program paints the entire window on every frame and keeps changing the color, so if it's running correctly, you'll see it fade from black to red over and over again. That's all it does.
+The objective of this homework is to get OpenGL working on your machine. This directory contains a "hello world" project that just opens up an OpenGL window. The program paints the entire window on every frame and keeps changing the color, so if it's running correctly, you'll see it fade from black to red over and over again. That's all it does, you don't actually see the words "hello world".
 
 In order to get this program to work, you'll have to set up some OpenGL components. The specific instructions depend on what system you are using.
 

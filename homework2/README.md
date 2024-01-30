@@ -7,7 +7,7 @@ In this homework, you will write a program in C++ that:
 1. Reads an OBJ file and parses it, storing it in memory in a format that will be usable by OpenGL.
 1. Prints to the terminal a description of the file in the format detailed below.
 
-To test your program, you should download a free 3d model from the internet. I use [Turbosquid](https://turbosquid.com) but there are plenty of other options (GCTrader, Sketchfab). I don't recommend paying for a model because there are plenty of free models available, and at this point you're just getting started.
+To test your program, you should download a free 3d model from the internet. I use [Turbosquid](https://turbosquid.com) but there are plenty of other options (GCTrader, Sketchfab). I don't recommend paying for a model because there are plenty of free models available, and at this point you're just getting started. You can download and use any kind of model you want (provided, of course, it adheres to the university code of conduct -- that goes for any third party asset you use in this class).
 
 What you will submit:
 
