@@ -18,23 +18,13 @@ dependencies/glew-2.1.0
 
 homework1/*
 !homework1/src
+!homework1/README.md
 
 homework2/*
 !homework2/src
+!homework2/README.md
 
 homework3/*
 !homework3/src
-
-homework4/*
-!homework4/src
-homework5/*
-!homework5/src
-homework6/*
-!homework6/src
-homework7/*
-!homework7/src
-homework8/*
-!homework8/src
-homework9/*
-!homework9/src
+!homework3/README.md
 
