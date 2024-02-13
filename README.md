@@ -29,4 +29,4 @@ For specific setup instructions for your platform, go into the Homework 1 folder
 * [Linux Terminal for Beginners](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview)
 * [Learn the Basics of Git in Under 10 Minutes](https://www.freecodecamp.org/news/learn-the-basics-of-git-in-under-10-minutes-da548267cc91/)
 
-Note that if you aren't a heavy git user and don't plan to use git to manage your own changes, the only commands you really need to know are "git clone" and "git pull."
+Note that if you aren't a heavy git user and don't plan to use git to manage your own changes, the only git commands you really need to know are "git clone" and "git pull."

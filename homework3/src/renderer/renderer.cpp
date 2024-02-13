@@ -148,7 +148,7 @@ bool Renderer::init(const Frame &frame)
    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
    /* Create a windowed mode window and its OpenGL context */
-   window = glfwCreateWindow(WIDTH, HEIGHT, "Raytracer", NULL, NULL);
+   window = glfwCreateWindow(WIDTH, HEIGHT, "Line Drawing Exercise", NULL, NULL);
 
    if (!window)
    {
@@ -163,7 +163,7 @@ bool Renderer::init(const Frame &frame)
    glewExperimental = GL_TRUE;
    glewInit();
 
-   // Does this only work in OpenGL 4.6?
+   // This only works in OpenGL 4.6
    // glEnable(GL_DEBUG_OUTPUT);
    // glDebugMessageCallback(glCallback, NULL);
    // glDebugMessageControl(GL_DONT_CARE, GL_DONT_CARE, GL_DONT_CARE, 0, NULL, GL_TRUE);
