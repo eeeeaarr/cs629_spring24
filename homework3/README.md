@@ -61,6 +61,9 @@ Draw a bezier curve segment, using the midpoint algorithm, with these control po
 * **p2**: (10,50)
 * **p3**: (100,110) (end point)
 
+<br>
+<br>
+
 ```
 homework3_exe.exe --bezier "10,11;50,11;10,50;100,110" --aaline "10,11;100,110"
 ```
