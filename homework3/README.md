@@ -79,7 +79,8 @@ This example draws a small red square.
 Frame frame;
 Renderer renderer;
 
-Color c = { 255, 0, 0 };
+// colors range from 0 to 1
+Color c = { 1.0, 0.0, 0.0 };
 
 for (int i = 100; i < 110; i++) {
     for (int j = 100; j < 110; j++) {
