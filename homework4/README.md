@@ -11,11 +11,11 @@ Your raytracer needs to support the following entity types:
 * spheres
 * triangles
 * point lights
-* directional lights
+* directional lights (one per scene)
 
 And the following lighting calculations:
 * ambient
-* diffuse (one per scene)
+* diffuse
 * specular
 
 The focal length of your raytracer needs to be configurable and will be passed in via the config file.
