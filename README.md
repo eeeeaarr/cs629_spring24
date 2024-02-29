@@ -10,6 +10,8 @@ You are currently looking at a github repository containing the homework "starte
 
 [Homework 3: Line Drawing Exercise](homework3/)
 
+[Homework 4: Raytracer](homework4/)
+
 The homework starter projects are intended to be built using CMake. CMake attempts to be a cross-platform "build file builder" -- it will try to create a set of build files that work on your platform.
 
 Generally, in each homework directory what you will do is:
