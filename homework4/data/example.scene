@@ -1,0 +1,13 @@
+# materials:
+material $name:"MatA" ->col:(0.2, 0.1, 0.4) gloss:0.4 p:20
+
+# objects:
+sphere ->center:(10, 20, 40) radius:5 $mat:"MatA"
+triangle ->p0:(100, 200, 300) ->p1:(200, 210, 310) ->p2:(300, 310, 10) $mat:"MatA"
+
+# lights:
+light ->pos:(10, 30, 40) i:10
+direction ->d:(30, 40, 50) h:30
+
+# rendering info:
+global ambient: 0.1 focal_length: 1.2
