@@ -33,6 +33,7 @@ endif()
 if(UNIX AND NOT APPLE)
    find_package(glfw3 REQUIRED)
    find_package(GLEW REQUIRED)
+   find_package(OpenGL REQUIRED)
 endif()
 
 file(GLOB_RECURSE
@@ -53,5 +54,5 @@ if (WIN32)
 endif()
 
 if (UNIX AND NOT APPLE)
-   target_link_libraries(homework3_exe PRIVATE glfw GLEW::GLEW)
+   target_link_libraries(homework3_exe PRIVATE glfw GLEW::GLEW ${OPENGL_LIBRARIES})
 endif()
