@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(homework4_exe)
+project(milestone1_exe)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
@@ -40,19 +40,19 @@ file(GLOB_RECURSE
      SOURCES
      *.cpp)
 
-add_executable(homework4_exe ${SOURCES})
+add_executable(milestone1_exe ${SOURCES})
 
 
 if (APPLE)
-   target_link_libraries(homework4_exe PRIVATE glfw GLEW::GLEW)
-   target_link_libraries(homework4_exe PRIVATE "-framework OpenGL")   
+   target_link_libraries(milestone1_exe PRIVATE glfw GLEW::GLEW)
+   target_link_libraries(milestone1_exe PRIVATE "-framework OpenGL")   
 endif()
 
 if (WIN32)
-   target_link_libraries(homework4_exe PRIVATE ${GLEW_LIBRARY} ${GLFW_LIBRARY})
-   target_link_libraries(homework4_exe PRIVATE glew32 glfw3 opengl32)
+   target_link_libraries(milestone1_exe PRIVATE ${GLEW_LIBRARY} ${GLFW_LIBRARY})
+   target_link_libraries(milestone1_exe PRIVATE glew32 glfw3 opengl32)
 endif()
 
 if (UNIX AND NOT APPLE)
-   target_link_libraries(homework4_exe PRIVATE glfw GLEW::GLEW ${OPENGL_LIBRARIES})
+   target_link_libraries(milestone1_exe PRIVATE glfw GLEW::GLEW ${OPENGL_LIBRARIES})
 endif()
