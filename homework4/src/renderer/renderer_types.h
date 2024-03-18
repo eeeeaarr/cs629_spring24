@@ -1,6 +1,7 @@
 #pragma once
 #include <algorithm>
 #include <vector>
+#include <iostream>
 
 #include "definitions.h"
 
@@ -18,11 +19,15 @@ struct Color {
     float newBlue = std::min(b + p.b, 1.0f);
     return {newRed, newGreen, newBlue};
   }
+
+  friend std::ostream& operator<<(std::ostream& os, const Color& obj);
 };
 
 Color operator*(Color p, float f);
 
 Color operator*(float f, Color p);
+
+Color operator+=(Color &p1, Color p2);
 
 Color operator"" _c(unsigned long long inc);
 

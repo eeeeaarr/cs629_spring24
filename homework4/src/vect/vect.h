@@ -1,5 +1,7 @@
 #pragma once
 #include <algorithm>
+#include <cmath>
+#include <iostream>
 
 class Vect {
  public:
@@ -66,7 +68,7 @@ class Vect {
   float operator*(Vect v) { return x * v.x + y * v.y + z * v.z; }
 
   // magnitude
-  float mag() { return (float)sqrt(x * x + y * y + z * z); }
+  float mag() { return (float)std::sqrt(x * x + y * y + z * z); }
 
   float slope() { return y / x; }
 
@@ -76,6 +78,8 @@ class Vect {
   }
 
   float projectOnto(Vect u) { return ((*this) * u) / u.mag(); }
+
+  friend std::ostream& operator<<(std::ostream& os, const Vect& obj);
 };
 
 Vect operator*(float scaleFactor, Vect v);
