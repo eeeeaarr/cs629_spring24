@@ -1,0 +1,8 @@
+# materials:
+material $name:"MatA" ->col:(0.85, 0.2, 0.3) gloss:0.4 p:20
+
+# objects:
+sphere ->center:(0, 0, -5) radius:2 $mat:"MatA"
+
+# rendering info:
+global ambient: 0.2 focal_length: -1.2
