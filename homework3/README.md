@@ -31,7 +31,7 @@ The opcodes should be (these correspond to the types listed above):
 
 For lines, the specifier should give the start x and y, and the end x and y, of the line:
 ```
-sx,sy:ex,ey
+sx,sy;ex,ey
 ```
 
 For Bézier curves, the specifier should give the control points p0, p1, p2, and p3:
