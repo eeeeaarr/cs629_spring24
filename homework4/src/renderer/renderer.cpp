@@ -70,7 +70,6 @@ bool Renderer::initGL(GLfloat *tex_data) {
   glUseProgram(shaderProgram);
 
   GLint sampler_uniform_loc = glGetUniformLocation(shaderProgram, "tex");
-  std::cout << "uniform: " << sampler_uniform_loc << std::endl;
   glUniform1i(sampler_uniform_loc, 0);
 
   /*********************/
