@@ -44,7 +44,7 @@ std::string getAttributeName(const std::string& token) {
 }
 
 float getNumericAttributeValue(const std::string& token) {
-	std::regex pattern{ R"(:(\d+(?:\.\d+)?))" };
+	std::regex pattern{ R"(:(-?\d+(?:\.\d+)?))" };
 	std::smatch match;
 	if (!std::regex_search(token, match, pattern)) {
 		throw "Invalid numeric attribute: " + token;
@@ -70,8 +70,9 @@ std::string getStringAttributeValue(const std::string& token) {
 }
 
 Vect getVectorAttributeValue(const std::string& token) {
-	std::regex pattern(R"(:\((\d+(?:\.\d+)?),(\d+(?:\.\d+)?),(\d+(?:\.\d+)?)\))");
+	std::regex pattern(R"(:\((-?\d+(?:\.\d+)?), *(-?\d+(?:\.\d+)?), *(-?\d+(?:\.\d+)?)\))");
 	std::smatch match;
+
 	if (!std::regex_search(token, match, pattern)) {
 		throw "Invalid vector attribute: " + token;
 	}
@@ -154,6 +155,7 @@ void parseSphere(std::vector<std::string> attributes, RenderingInfo* rinfo) {
 	for (auto attribute : attributes) {
 		if (startsNumericAttribute(attribute)) {
 			std::string name = getAttributeName(attribute);
+	
 			if (name == "radius") {
 				sphere->radius = getNumericAttributeValue(attribute);
 			} else {
@@ -161,6 +163,7 @@ void parseSphere(std::vector<std::string> attributes, RenderingInfo* rinfo) {
 			}
 		} else if (startsVectorAttribute(attribute)) {
 			std::string name = getAttributeName(attribute);
+
 			if (name == "->center") {
 				sphere->center = getVectorAttributeValue(attribute);
 			} else {
@@ -246,6 +249,7 @@ void parseMaterial(std::vector<std::string> attributes, RenderingInfo* rinfo) {
 }
 
 void parseLine(std::string line, RenderingInfo* rinfo) {
+
 	// first parse file
 	std::stringstream ss(line);
 	std::string token;
@@ -297,6 +301,9 @@ void parseLine(std::string line, RenderingInfo* rinfo) {
 
 RenderingInfo* Parser::parseFile(std::string filename) {
 	RenderingInfo* rinfo = new RenderingInfo();
+	rinfo->ambient = 0.0;
+	rinfo->focal_length = -1.25;
+	rinfo->dir_light = nullptr;
 	std::ifstream file(filename);
 	if (file.is_open()) {
 		std::string line;
