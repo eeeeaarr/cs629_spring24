@@ -1,0 +1,40 @@
+# materials:
+material $name:"wall" ->col:(0.8, 0.8, 0.8) gloss:0.1 p:100
+material $name:"redball" ->col:(0.85, 0.2, 0.3) gloss:0.2 p:5080
+
+# objects:
+# back wall
+triangle ->p0:(-7.002, 5.004, -24.0002) ->p1:(-7.0012, -5.004, -24.0013) ->p2:(7.00142, -5.0018, -24.008) $mat:"wall"
+triangle ->p0:(-7.002, 5.004, -24.0002) ->p2:(7.00142, -5.0018, -24.008) ->p1:(7.0012, 5.001, -24.004) $mat:"wall"
+
+# front wall (useful only for mirror reflections)
+triangle ->p0:(-7.002, 5.004, 24.0002) ->p1:(-7.0012, -5.004, 24.0013) ->p2:(7.00142, -5.0018, 24.008) $mat:"wall"
+triangle ->p0:(-7.002, 5.004, 24.0002) ->p2:(7.00142, -5.0018, 24.008) ->p1:(7.0012, 5.001, 24.004) $mat:"wall"
+
+# left wall
+triangle ->p0:(-7.002, 5.004, -24.0002) ->p1:(-7.0012, -5.004, -24.0013) ->p2:(-7.004, -5.002, 24.01) $mat:"wall"
+triangle ->p0:(-7.002, 5.004, -24.0002) ->p2:(-7.0021, 5.01, 24.0001) ->p1:(-7.004, -5.002, 24.01)  $mat:"wall"
+
+# right wall
+triangle ->p0:(7.0012, 5.001, -24.004) ->p1:(7.00142, -5.0018, -24.008) ->p2:(7.006, -5.0013, 24.01) $mat:"wall"
+triangle ->p0:(7.0012, 5.001, -24.004) ->p2:(7.0021, 5.01, 24.0001) ->p1:(7.006, -5.0013, 24.01)  $mat:"wall"
+
+# floor
+triangle ->p0:(-7.0021, 5.01, 24.0001) ->p1:(-7.002, 5.004, -24.0002) ->p2:(7.0012, 5.001, -24.004) $mat:"wall"
+triangle ->p0:(7.0012, 5.001, -24.004) ->p2:(7.0021, 5.01, 24.0001) ->p1:(-7.0021, 5.01, 24.0001)  $mat:"wall"
+
+# ceiling
+triangle ->p0:(-7.004, -5.002, 24.01) ->p1:(-7.0012, -5.004, -24.0013) ->p2:(7.00142, -5.0018, -24.008) $mat:"wall"
+triangle ->p0:(7.00142, -5.0018, -24.008) ->p2:(7.006, -5.0013, 24.01) ->p1:(-7.004, -5.002, 24.01)  $mat:"wall"
+
+sphere ->center:(0.2, 0.2, -17.0) radius:1 $mat:"redball"
+sphere ->center:(4, 0, -13) radius:1 $mat:"redball"
+sphere ->center:(-4, 0, -13) radius:1 $mat:"redball"
+sphere ->center:(0, 3, -13) radius:1 $mat:"redball"
+sphere ->center:(0, -3, -13) radius:1 $mat:"redball"
+
+# lights
+light ->pos:(0, 0, -10) i:100
+
+# rendering info:
+global ambient: 0.05 focal_length: -2 shadows: 1

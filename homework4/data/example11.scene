@@ -1,0 +1,47 @@
+# materials:
+material $name:"wall" ->col:(0.8, 0.8, 0.8) gloss:0.1 p:100
+material $name:"redball" ->col:(0.85, 0.2, 0.3) gloss:0.2 p:5080
+material $name:"greenball" ->col:(0.2, 0.85, 0.3) gloss:0.6 p:80
+material $name:"blueball" ->col:(0.2, 0.3, 0.85) gloss:0.6 p:80
+material $name:"whiteball" ->col:(0.78, 0.78, 0.73) gloss:0.1 p:9080
+material $name:"blackball" ->col:(0.08, 0.1, 0.21) gloss:1.0 p:10000
+
+# objects:
+# back wall
+triangle ->p0:(-7.002, 5.004, -24.0002) ->p1:(-7.0012, -5.004, -24.0013) ->p2:(7.00142, -5.0018, -24.008) $mat:"wall"
+triangle ->p0:(-7.002, 5.004, -24.0002) ->p2:(7.00142, -5.0018, -24.008) ->p1:(7.0012, 5.001, -24.004) $mat:"wall"
+
+# front wall (useful only for mirror reflections)
+triangle ->p0:(-7.002, 5.004, 24.0002) ->p1:(-7.0012, -5.004, 24.0013) ->p2:(7.00142, -5.0018, 24.008) $mat:"wall"
+triangle ->p0:(-7.002, 5.004, 24.0002) ->p2:(7.00142, -5.0018, 24.008) ->p1:(7.0012, 5.001, 24.004) $mat:"wall"
+
+# left wall
+triangle ->p0:(-7.002, 5.004, -24.0002) ->p1:(-7.0012, -5.004, -24.0013) ->p2:(-7.004, -5.002, 24.01) $mat:"wall"
+triangle ->p0:(-7.002, 5.004, -24.0002) ->p2:(-7.0021, 5.01, 24.0001) ->p1:(-7.004, -5.002, 24.01)  $mat:"wall"
+
+# right wall
+triangle ->p0:(7.0012, 5.001, -24.004) ->p1:(7.00142, -5.0018, -24.008) ->p2:(7.006, -5.0013, 24.01) $mat:"wall"
+triangle ->p0:(7.0012, 5.001, -24.004) ->p2:(7.0021, 5.01, 24.0001) ->p1:(7.006, -5.0013, 24.01)  $mat:"wall"
+
+# floor
+triangle ->p0:(-7.0021, 5.01, 24.0001) ->p1:(-7.002, 5.004, -24.0002) ->p2:(7.0012, 5.001, -24.004) $mat:"wall"
+triangle ->p0:(7.0012, 5.001, -24.004) ->p2:(7.0021, 5.01, 24.0001) ->p1:(-7.0021, 5.01, 24.0001)  $mat:"wall"
+
+# ceiling
+triangle ->p0:(-7.004, -5.002, 24.01) ->p1:(-7.0012, -5.004, -24.0013) ->p2:(7.00142, -5.0018, -24.008) $mat:"wall"
+triangle ->p0:(7.00142, -5.0018, -24.008) ->p2:(7.006, -5.0013, 24.01) ->p1:(-7.004, -5.002, 24.01)  $mat:"wall"
+
+sphere ->center:(0, 0, -10) radius:1 $mat:"redball"
+sphere ->center:(3, -3, -16) radius:0.7 $mat:"greenball"
+sphere ->center:(4, 4.6, -22) radius:2.4 $mat:"blueball"
+sphere ->center:(0.35, 0.45, -7) radius:0.45 $mat:"whiteball"
+sphere ->center:(-6.7, 1.2, -19) radius:2.1 $mat:"blackball"
+
+# lights
+# directional light is obscured by the box so we add another point light
+light ->pos:(4.8, 4.8, 4.8) i:150
+light ->pos:(5, -3, -1) i:80
+light ->pos:(-5, 4, 1.2) i:125
+
+# rendering info:
+global ambient: 0.05 focal_length: -2 shadows: 1
