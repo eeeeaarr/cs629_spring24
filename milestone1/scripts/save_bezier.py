@@ -14,13 +14,22 @@ if bezier_curve:
     # Create a list to store the coordinates
     bezier_coordinates = []
 
+    first = True
+    previous_point = 0
     for bezier_point in spline.bezier_points:
-        p = bezier_point.co
-        c_left = bezier_point.handle_left
-        c_right = bezier_point.handle_right
-        bezier_coordinates.append(f"c={c_left.x} {c_left.y} {c_left.z}")
-        bezier_coordinates.append(f"p={p.x} {p.y} {p.z}")
-        bezier_coordinates.append(f"c={c_right.x} {c_right.y} {c_right.z}")
+        if first:
+            previous_point = bezier_point
+            first = False
+        else:
+            p0 = previous_point.co
+            c0 = previous_point.handle_right
+            c1 = bezier_point.handle_left
+            p1 = bezier_point.co
+            bezier_coordinates.append(f"p={p0.x} {p0.y} {p0.z}")
+            bezier_coordinates.append(f"c={c0.x} {c0.y} {c0.z}")
+            bezier_coordinates.append(f"c={c1.x} {c1.y} {c1.z}")
+            bezier_coordinates.append(f"p={p1.x} {p1.y} {p1.z}")
+            previous_point = bezier_point
 
     # Get the path of the current .blend file
     blend_file_path = bpy.data.filepath

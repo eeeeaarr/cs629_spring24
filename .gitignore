@@ -15,6 +15,7 @@
 */*.dir
 dependencies/glfw-3.3.9.bin.WIN64
 dependencies/glew-2.1.0
+.DS_Store
 
 homework1/*
 !homework1/src
