@@ -25,10 +25,10 @@ if bezier_curve:
             c0 = previous_point.handle_right
             c1 = bezier_point.handle_left
             p1 = bezier_point.co
-            bezier_coordinates.append(f"p={p0.x} {p0.y} {p0.z}")
-            bezier_coordinates.append(f"c={c0.x} {c0.y} {c0.z}")
-            bezier_coordinates.append(f"c={c1.x} {c1.y} {c1.z}")
-            bezier_coordinates.append(f"p={p1.x} {p1.y} {p1.z}")
+            bezier_coordinates.append(f"p {p0.x} {p0.y} {p0.z}")
+            bezier_coordinates.append(f"c {c0.x} {c0.y} {c0.z}")
+            bezier_coordinates.append(f"c {c1.x} {c1.y} {c1.z}")
+            bezier_coordinates.append(f"p {p1.x} {p1.y} {p1.z}")
             previous_point = bezier_point
 
     # Get the path of the current .blend file
