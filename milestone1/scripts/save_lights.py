@@ -28,6 +28,6 @@ file_path = os.path.join(os.path.dirname(blend_file_path), file_name)
 # Write the coordinates to a file
 with open(file_path, 'w') as file:
     for coordinates in light_coordinates:
-        file.write(f"{coordinates[0]}, {coordinates[1]}, {coordinates[2]}\n")
+        file.write(f"{coordinates[0]} {coordinates[1]} {coordinates[2]}\n")
 
 print(f"Light coordinates saved to: {file_path}")
