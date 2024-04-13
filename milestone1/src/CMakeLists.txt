@@ -17,17 +17,19 @@ endif()
 if(WIN32)
    set(GLEW_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../../dependencies/glew-2.1.0/include")
    set(GLFW_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../../dependencies/glfw-3.3.9.bin.WIN64/include")
+   set(GLM_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../../dependencies/glm-1.0.1-light")
 
    # Set paths to GLEW and GLFW libraries
    set(GLEW_LIBRARY "${CMAKE_CURRENT_SOURCE_DIR}/../../dependencies/glew-2.1.0/lib/Release/x64/glew32.lib")
    set(GLFW_LIBRARY "${CMAKE_CURRENT_SOURCE_DIR}/../../dependencies/glfw-3.3.9.bin.WIN64/lib-vc2022/glfw3.lib")
 
    # Include directories
-   include_directories(${GLEW_INCLUDE_DIR} ${GLFW_INCLUDE_DIR})
+   include_directories(${GLEW_INCLUDE_DIR} ${GLFW_INCLUDE_DIR} ${GLM_INCLUDE_DIR})
 
    # Link directories
    link_directories("${CMAKE_CURRENT_SOURCE_DIR}/../../dependencies/glew-2.1.0/lib/Release/x64")
    link_directories("${CMAKE_CURRENT_SOURCE_DIR}/../../dependencies/glfw-3.3.9.bin.WIN64/lib-vc2022")
+
 endif()
 
 if(UNIX AND NOT APPLE)
@@ -44,6 +46,7 @@ add_executable(milestone1_exe ${SOURCES})
 
 
 if (APPLE)
+   target_compile_options(milestone1_exe PUBLIC -g)
    target_link_libraries(milestone1_exe PRIVATE glfw GLEW::GLEW)
    target_link_libraries(milestone1_exe PRIVATE "-framework OpenGL")   
 endif()
